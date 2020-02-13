@@ -9,7 +9,7 @@ def DownloadResource(url: str, pathname='./tmp.mp3', display=False):
     import os
     if os.path.exists(pathname):
         ret = pathname.split('/')
-        answer = input(ret[-1] + " had already existed\n 'y' to replace it 'n' to cancel ")
+        answer = input(ret[-1] + " had already existed\n 'y' to replace it or 'n' to cancel\n ")
         if answer == 'y' or answer == 'Y':
             if display:
                 urlretrieve(url, pathname, cbk)
@@ -25,11 +25,11 @@ def DownloadResource(url: str, pathname='./tmp.mp3', display=False):
 
 
 def cbk(a, b, c):
-    '''''回调函数
-    @a:已经下载的数据块
-    @b:数据块的大小
-    @c:远程文件的大小
-    '''
+    """call back
+    :param a: number of data blocks which have downloaded
+    :param b:the size of a block
+    :param c:total size
+    """
     per = 100.0 * a * b / c
     if per > 100:
         per = 100

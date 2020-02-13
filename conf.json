@@ -1,0 +1,6 @@
+{
+  "executable_path": "./chromedriver.exe",
+  "url": "https://www.kugou.com/song/#hash=97B2344B3B6E829484A39986535E33A4&album_id=8348995",
+  "download_path": "./b.mp3",
+  "display": false
+}
