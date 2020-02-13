@@ -50,9 +50,13 @@ def RunProgram():
         print(tag)
         music_url = tag['src']
         print(music_url)
-        answer = input("Are you sure to download?\n 'y' to download or press any other keys to cancel\n ")
+        answer = input(
+            "Are you sure to download?\n 'y' to download or press any other keys to cancel\n ")
         if answer == 'Y' or answer == 'y':
-            DownloadResource(music_url, ret['download_path'])
+            if ret['display']:
+                DownloadResource(music_url, ret['download_path'], display=True)
+            else:
+                DownloadResource(music_url, ret['download_path'])
             print('complete')
         else:
             print('the task has been cancelled')
