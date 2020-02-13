@@ -40,7 +40,7 @@ def RunProgram():
     print('start searching')
     browser.get(url)
     time.sleep(5)
-    page = BeautifulSoup(browser.page_source, 'html5lib')
+    page = BeautifulSoup(browser.page_source, 'html.parser')
     tag = page.find(name='audio', attrs={'src': True})
     browser.close()
     if not tag:
